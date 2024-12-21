@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STARSHIP SURVIVAL beta</title>
+  <link rel="icon" href="assets/enemy.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Menu utama (tampil pertama kali) -->
+  <div id="menu">
+    <h1>STARSHIP SURVIVAL</h1>
+    <div class="buttons">
+      <button id="startBtn">Start Game</button>
+      <button id="instructionsBtn">Instructions</button>
+    </div>
+  </div>
+  
+  <audio id="bgmMainMenu" src="assets/audio/main-menu.mp3" preload="auto"></audio>
+  <audio id="bgmSkinSelection" src="assets/audio/select-skin.mp3" preload="auto"></audio>
+  <audio id="bgmGameOver" src="assets/audio/gameover.mp3" preload="auto"></audio>
+
+  <!-- Layar Game Over (sembunyi pada awalnya) -->
+  <div id="timer" style="display: none;">Time: 0 second</div>
+  <div id="gameOver" style="display: none;">
+    <h1>GAME OVER</h1>
+    <p>Total Score: <span id="finalScoreDisplay"></span></p>
+    <p>Survival Time: <span id="survivalTimeDisplay"></span></p>
+    <button id="mainMenuBtn">Main Menu</button>
+  </div>  
+
+  <!-- Layar Instruksi -->
+  <div id="instructions" style="display: none;">
+    <h2>Instructions</h2>
+    <ul>
+      <li>Use the left and right arrow keys to move the ship.</li>
+      <li>Press the space bar to shoot enemies.</li>
+      <li>Players are given 3 lives, there will be no additional lives even if the points collected are very high so try to survive.</li>
+      <li>Choose your starship and start shooting! (If you don't choose one then the player will use the default ship.)</li>
+    <button id="closeInstructionsBtn">Close</button>
+  </div>
+
+  <!-- Menu Pemilihan Skin -->
+  <div id="skinSelection" style="display: none;">
+    <h2>Choose Your STARSHIP</h2>
+    <div class="skin-options">
+      <img src="assets/skin/skin1.png" alt="Point Cooper" class="skin" data-skin="assets/skin/skin1.png" title="Point Cooper">
+      <img src="assets/skin/skin2.png" alt="White Flash" class="skin" data-skin="assets/skin/skin2.png" title="White Flash">
+      <img src="assets/skin/skin3.png" alt="Red Hunter" class="skin" data-skin="assets/skin/skin3.png" title="Red Hunter">
+      <img src="assets/skin/skin4.png" alt="Silver Swiper" class="skin" data-skin="assets/skin/skin4.png" title="Silver Swiper">
+      <img src="assets/skin/skin5.png" alt="Alien Demon" class="skin" data-skin="assets/skin/skin5.png" title="Alien Demon">
+      <img src="assets/skin/skin6.png" alt="Galaga Fihter" class="skin" data-skin="assets/skin/skin6.png" title="Galaga Fihter">
+      <img src="assets/skin/skin7.png" alt="Red Ripper" class="skin" data-skin="assets/skin/skin7.png" title="Red Ripper">
+      <img src="assets/skin/skin8.png" alt="Green Shadow" class="skin" data-skin="assets/skin/skin8.png" title="Green Shadow">
+      <img src="assets/skin/skin9.png" alt="Blue Swade" class="skin" data-skin="assets/skin/skin9.png" title="Blue Swade">
+      <img src="assets/skin/skin10.png" alt="Cosmic Turtle" class="skin" data-skin="assets/skin/skin10.png" title="Cosmic Turtle">
+      <img src="assets/skin/skin11.png" alt="Code White" class="skin" data-skin="assets/skin/skin11.png" title="Code White">
+      <img src="assets/skin/skin12.png" alt="Ningen" class="skin" data-skin="assets/skin/skin12.png" title="Ningen">
+      <img src="assets/skin/skin13.png" alt="Command V" class="skin" data-skin="assets/skin/skin13.png" title="Command V">
+      <img src="assets/skin/skin14.png" alt="Ghost" class="skin" data-skin="assets/skin/skin14.png" title="Ghost">
+      <img src="assets/skin/skin15.png" alt="Blade" class="skin" data-skin="assets/skin/skin15.png" title="Blade">
+      <img src="assets/skin/skin16.png" alt="Dimorphodon" class="skin" data-skin="assets/skin/skin16.png" title="Dimorpthodon">
+      <img src="assets/skin/skin17.png" alt="Hatzegopteryx" class="skin" data-skin="assets/skin/skin17.png" title="Hatzegopteryx">
+      <img src="assets/skin/skin18.png" alt="Rhamphorhynchus" class="skin" data-skin="assets/skin/skin18.png" title="Rhamphorhynchus">
+      <img src="assets/skin/skin19.png" alt="Defender" class="skin" data-skin="assets/skin/skin19.png" title="Defender">
+      <img src="assets/skin/skin20.png" alt="Guardian" class="skin" data-skin="assets/skin/skin20.png" title="Guardian">
+    </div>    
+    <button id="confirmSkinBtn">Confirm</button>
+  </div>
+
+  <div id="livesContainer"></div>
+
+  <canvas id="gameCanvas"></canvas>
+  <script src="script.js"></script>
+
+</body>
+</html>
